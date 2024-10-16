@@ -1,0 +1,6 @@
+@WorflowTestApp_HostAddress = http://localhost:5100
+
+GET {{WorflowTestApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
