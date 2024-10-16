@@ -18,7 +18,7 @@ namespace UnitTestWorflow
         public void TestGetWeatherForecastResult()
         {
             var result = weatherForecastController.Get();
-            Assert.NotNull(result);
+            Assert.Null(result);
         }
     }
 }
