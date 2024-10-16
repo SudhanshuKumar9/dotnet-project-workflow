@@ -1,0 +1,18 @@
+name: Buid .NET Project
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Pull Code
+              uses: actions/checkout@v4
+            - name: Install Dotnet
+              uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: '8.0.x'
+            - name: Restore Dependencies
+              run: dotnet restore
+            - name: Build project
+              run: dotnet build
+
+            
