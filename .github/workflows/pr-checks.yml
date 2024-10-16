@@ -1,10 +1,13 @@
-name: Buid .NET Project
-on: [push, workflow_dispatch]
+name: Check PR for each commit
+on:
+    pull_request:
+        branches:
+            - 'development'
 jobs:
-    build:
+    prcheck:
         runs-on: ubuntu-latest
         steps:
-            - name: Pull Code
+            - name: Checkout Code
               uses: actions/checkout@v4
             - name: Install Dotnet
               uses: actions/setup-dotnet@v4
@@ -15,6 +18,5 @@ jobs:
             - name: Build project
               run: dotnet build --no-restore
             - name: Test project
-              run: dotnet test --no-restore
-
-            
+              run: dotnet test --no-restore 
+              
