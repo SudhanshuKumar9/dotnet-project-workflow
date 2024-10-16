@@ -14,5 +14,7 @@ jobs:
               run: dotnet restore
             - name: Build project
               run: dotnet build
+            - name: Test project
+              run: dotnet test --no-restore
 
             
