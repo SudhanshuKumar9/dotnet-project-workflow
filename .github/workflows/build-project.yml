@@ -11,9 +11,9 @@ jobs:
               with:
                 dotnet-version: '8.0.x'
             - name: Restore Dependencies
-              run: dotnet restore --no-restore
+              run: dotnet restore
             - name: Build project
-              run: dotnet build
+              run: dotnet build --no-restore
             - name: Test project
               run: dotnet test --no-restore
 
